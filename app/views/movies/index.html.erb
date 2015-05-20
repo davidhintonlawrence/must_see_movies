@@ -16,31 +16,19 @@
 <hr>
 
 <div class="row isotope-container">
-<% @movies.each do |movie| %>
+  <% @movies.each do |movie| %>
   <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3 isotope-item">
     <div class="panel panel-default">
       <div class="panel-heading">
-        <h3 class="panel-title">Movie #<%= movie.id %></h3>
+        <h3 class="panel-title"><%= movie.title %></h3>
       </div>
       <div class="panel-body">
         <dl>
           <dt>Director</dt>
-          <dd><%= movie.director_id %></dd>
+          <dd><%= Director.find_by({ :id => movie.director_id}).name   %></dd>
 
-          <dt>Image url</dt>
-          <dd><%= movie.image_url %></dd>
-
-          <dt>Description</dt>
-          <dd><%= movie.description %></dd>
-
-          <dt>Duration</dt>
-          <dd><%= movie.duration %></dd>
-
-          <dt>Year</dt>
-          <dd><%= movie.year %></dd>
-
-          <dt>Title</dt>
-          <dd><%= movie.title %></dd>
+          <dt>Poster</dt>
+          <dt><img src ="<%= movie.image_url %>"></dt>
 
         </dl>
         <div class="btn-group btn-group-justified">
@@ -59,7 +47,7 @@
       </div>
     </div>
   </div>
-<% end %>
+  <% end %>
 </div>
 
 <!-- You can ignore the following. It's a quick and dirty example of how to get a Pinterest-style layout with quick search. -->

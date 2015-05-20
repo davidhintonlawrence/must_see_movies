@@ -25,10 +25,10 @@
       <div class="panel-body">
         <dl>
           <dt>Image url</dt>
-          <dd><%= director.image_url %></dd>
+          <dd><img src="<%= director.image_url %>"</dd>
 
           <dt>Bio</dt>
-          <dd><%= director.bio %></dd>
+          <dd><%= truncate(director.bio) %></dd>
 
           <dt>Dob</dt>
           <dd><%= director.dob %></dd>
